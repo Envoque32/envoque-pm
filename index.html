@@ -123,8 +123,8 @@ footer a{color:var(--mint)}
     <p class="lede" id="lede">Tell us about your investment property and a property manager will call you. A real person, a straight conversation, and nothing changes until you decide.</p>
     <div class="trust"><span>Takes about two minutes</span><span>A property manager calls you</span><span>Your decision what happens next</span></div>
     <div class="heroimg" aria-hidden="true">
-      <div class="arch"><img alt="" src="assets/portrait-a.jpg" width="168" height="210"></div>
-      <div class="arch b"><img alt="" src="assets/portrait-b.jpg" width="132" height="166"></div>
+      <div class="arch"><img id="hero_img_a" alt="" src="assets/portrait-a.jpg" width="168" height="210"></div>
+      <div class="arch b"><img id="hero_img_b" alt="" src="assets/portrait-b.jpg" width="132" height="166"></div>
     </div>
   </div>
 
@@ -240,7 +240,7 @@ footer a{color:var(--mint)}
 </div></section>
 
 <section class="people"><div class="wrap">
-  <div class="bigarch"><img alt="" src="assets/portrait-c.jpg" loading="lazy" width="720" height="900"></div>
+  <div class="bigarch"><img id="big_img" alt="" src="assets/portrait-c.jpg" loading="lazy" width="720" height="900"></div>
   <div>
     <h2 class="sec" id="p_h">You are not difficult. You are busy.</h2>
     <p id="p_1">Most landlords are not hard to please. They want the phone answered, the numbers explained and the property looked after the way they would look after it themselves.</p>
@@ -311,6 +311,8 @@ footer a{color:var(--mint)}
  };
  var key=q.get('c')||''; if(!C[key]) key=''; var D=C[key]||null;
  document.body.setAttribute('data-c',key);
+ var IMG={self_managing_landlord:{hero_img_a:'assets/self-hero-a.jpg',hero_img_b:'assets/self-hero-b.jpg'}};
+ if(IMG[key]){for(var iid in IMG[key]){var ie=document.getElementById(iid); if(ie) ie.src=IMG[key][iid];}}
  function set(id,html){var e=document.getElementById(id); if(e&&html!==undefined) e.innerHTML=html;}
  if(D){
   set('eyebrow',D.eyebrow);set('h1',D.h1);set('lede',D.lede);set('cardh',D.cardh);set('cardsub',D.cardsub);
